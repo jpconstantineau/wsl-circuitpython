@@ -17,13 +17,17 @@ tar xvf ~/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
 
 
 echo 'export PATH=/home/$USER/bin/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH' | sudo tee -a  ~/.bash_profile
+echo 'export PATH=/home/$USER/.local/bin:$PATH' | sudo tee -a  ~/.bash_profile
+
+export PATH=/home/$USER/bin/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
+export PATH=/home/$USER/.local/bin:$PATH
 
 which arm-none-eabi-gcc
 
 
 cd ~
 git clone https://github.com/adafruit/circuitpython.git
-cd circuitpython
+cd ~/circuitpython
 git submodule sync --quiet --recursive
 git submodule update --init --progress
 
@@ -31,5 +35,5 @@ pip3 install -r requirements-dev.txt
 pip3 install --upgrade click==7.1.2
 
 
-cd port/nrf
+cd ~/circuitpython/port/nrf
 make BOARD=pca10100 V=2
