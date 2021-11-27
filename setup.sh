@@ -36,4 +36,6 @@ pip3 install --upgrade click==7.1.2
 
 
 cd ~/circuitpython/ports/nrf
+make clean BOARD=pca10100
+
 make BOARD=pca10100 V=2
