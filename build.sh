@@ -1,4 +1,5 @@
-
+cd ~/circuitpython
+make -C mpy-cross
 cd ~/circuitpython/ports/nrf
 make clean BOARD=pca10100
 
