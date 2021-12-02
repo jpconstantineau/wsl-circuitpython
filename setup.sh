@@ -24,18 +24,3 @@ export PATH=/home/$USER/.local/bin:$PATH
 
 which arm-none-eabi-gcc
 
-
-cd ~
-git clone https://github.com/adafruit/circuitpython.git
-cd ~/circuitpython
-git submodule sync --quiet --recursive
-git submodule update --init --progress
-
-pip3 install -r requirements-dev.txt
-pip3 install --upgrade click==7.1.2
-
-
-cd ~/circuitpython/ports/nrf
-make clean BOARD=pca10100
-
-make BOARD=pca10100 V=2
