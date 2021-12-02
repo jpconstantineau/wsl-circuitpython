@@ -12,6 +12,8 @@
 
 
 #export PATH=/opt/nrf-command-line-tools/bin:$PATH
-export PATH=/mnt/c/Program Files/Nordic Semiconductor/nrf-command-line-tools/bin:$PATH
+export PATH='/mnt/c/Program Files/Nordic Semiconductor/nrf-command-line-tools/bin':$PATH
 
-#alias nrfjprog='nrfjprog.exe'
+alias nrfjprog='nrfjprog.exe'
+
+ln -s '/mnt/c/Program Files/Nordic Semiconductor/nrf-command-line-tools/bin/nrfjprog.exe'  /home/$USER/.local/bin/nrfjprog
